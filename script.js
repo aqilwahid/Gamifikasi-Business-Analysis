@@ -28,6 +28,8 @@ const diceEl = document.getElementById('dice');
 const diceContainerEl = document.getElementById('dice-container');
 const rollBtn = document.getElementById('roll-btn');
 const uiLog = document.getElementById('game-log');
+const bgMusic = document.getElementById('bg-music');
+const winSound = document.getElementById('win-sound');
 
 // Modals
 const modalSetup = document.getElementById('setup-modal');
@@ -141,6 +143,18 @@ function drawConnection(fromPos, toPos, color, type) {
 
     boardSvg.appendChild(line);
 
+    const midX = (x1 + x2) / 2;
+    const midY = (y1 + y2) / 2;
+
+    const emoji = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    emoji.setAttribute("x", midX);
+    emoji.setAttribute("y", midY);
+    emoji.setAttribute("text-anchor", "middle");
+    emoji.setAttribute("dominant-baseline", "middle");
+    emoji.setAttribute("font-size", "24");
+    emoji.textContent = type === 'snake' ? "🐍" : "🪜";
+    boardSvg.appendChild(emoji);
+
     const c1 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     c1.setAttribute("cx", x1); c1.setAttribute("cy", y1); c1.setAttribute("r", 6); c1.setAttribute("fill", color);
     boardSvg.appendChild(c1);
@@ -191,6 +205,10 @@ confirmSetupBtn.onclick = () => {
 
 closeRulesBtn.onclick = () => {
     modalRules.classList.add('hidden');
+    modalRules.classList.add('hidden');
+    // Attempt to start music on user interaction
+    bgMusic.volume = 0.5;
+    bgMusic.play().catch(e => console.log("Audio play failed:", e));
     startGame();
 };
 
@@ -452,8 +470,11 @@ async function checkTileEvents(player) {
     }
 
     if (player.position === 100) {
-        alert(`${player.name} WINS!`);
-        gameState.status = 'WIN';
+        if (player.position === 100) {
+            winSound.play().catch(e => console.log("Win sound failed:", e));
+            alert(`${player.name} WINS!`);
+            gameState.status = 'WIN';
+        }
     }
 }
 
