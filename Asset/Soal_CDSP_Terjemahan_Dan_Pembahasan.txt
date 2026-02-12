@@ -1,0 +1,1018 @@
+Soal 1:
+Transformasi data mana yang paling efektif untuk menangkap tren kepuasan pelanggan secara keseluruhan dari waktu ke waktu?
+A. Menghitung skor rata-rata kepuasan untuk setiap pelanggan.
+B. Membuat rata-rata bergerak (moving average) dari skor kepuasan selama periode waktu tertentu.
+C. Menerapkan Principal Component Analysis (PCA) pada fitur kepuasan.
+D. Menormalisasi skor kepuasan ke distribusi z-score.
+
+Jawaban: B (Membuat rata-rata bergerak)
+Alasan: Moving average menghaluskan fluktuasi jangka pendek dan menyoroti tren jangka panjang atau siklus. Ini sangat efektif untuk data deret waktu seperti tren kepuasan pelanggan.
+
+---
+
+Soal 2:
+Pustaka Python apa yang harus mereka gunakan untuk mengumpulkan intelijen harga menggunakan teknik web scraping?
+A. Beautiful Soup
+B. Seaborn
+C. Matplotlib
+D. NumPy
+
+Jawaban: A (Beautiful Soup)
+Alasan: Beautiful Soup adalah pustaka Python yang dirancang untuk proyek-proyek seperti screen-scraping.
+
+---
+
+Soal 3:
+Manakah dari pernyataan berikut tentang k-means yang SALAH?
+A. k-means clustering adalah metode kuantisasi vektor.
+B. k-means clustering bertujuan untuk mempartisi n pengamatan menjadi k klaster.
+C. k-means tidak deterministik, dan memerlukan sejumlah iterasi.
+D. k-means sama dengan k-nearest neighbor.
+
+Jawaban: D (k-means sama dengan k-nearest neighbor)
+Alasan: K-means (unsupervised clustering) dan K-nearest neighbor (supervised classification/regression) adalah dua algoritma yang sama sekali berbeda.
+
+---
+
+Soal 4:
+Manakah dari berikut ini yang merupakan algoritma optimasi yang digunakan dalam deep learning, KECUALI?
+A. Adam
+B. K-means
+C. RMSprop
+D. SGD
+
+Jawaban: B (K-means)
+Alasan: Adam, RMSprop, dan SGD (Stochastic Gradient Descent) adalah algoritma optimasi yang sangat umum digunakan untuk melatih Neural Network. K-means adalah algoritma clustering, bukan tool optimasi model.
+
+---
+
+Soal 5:
+Manakah dari metode berikut yang PALING tepat untuk memuat data pelanggan ke lingkungan analisis data Anda dari database cuaca?
+A. Menyalin dan menempel data secara manual dari file datar ke dalam kode Anda.
+B. Menggunakan Beautiful Soup untuk mengekstrak data cuaca secara langsung dari situs web berita.
+C. Menghubungkan ke database cuaca menggunakan pustaka mesin database seperti pandas.read_sql() atau SQLAlchemy.
+D. Memuat file CSV Anda menggunakan pandas.read_csv().
+
+Jawaban: C (Menghubungkan ke database cuaca menggunakan pandas.read_sql())
+Alasan: Opsi A tidak efisien dan rentan kesalahan. Opsi B untuk web scraping, bukan database. Opsi D untuk file CSV, bukan database. Menghubungkan langsung ke database adalah cara paling efisien dan tepat.
+
+---
+
+Soal 6:
+Apa tujuan dari penskalaan fitur (feature scaling) dalam fase persiapan data untuk pemodelan?
+A. Untuk mengubah semua fitur menjadi nilai biner.
+B. Untuk menyeimbangkan dataset dengan membuat data sintetis.
+C. Untuk memastikan bahwa fitur dengan skala yang lebih besar tidak terlalu memengaruhi model.
+D. Untuk menghapus outlier dari dataset.
+
+Jawaban: C (Untuk memastikan bahwa fitur dengan skala yang lebih besar tidak terlalu memengaruhi model)
+Alasan: Banyak algoritma Machine Learning (seperti KNN, SVM, Neural Networks) sensitif terhadap skala fitur. Tanpa penskalaan, fitur dengan nilai numerik besar akan mendominasi perhitungan jarak atau gradien.
+
+---
+
+Soal 7:
+Manakah dari berikut ini format yang baik untuk menyimpan model machine learning untuk aplikasi yang dibangun dengan Python?
+A. CSV
+B. pickle
+C. PMML
+D. XML
+
+Jawaban: B (pickle)
+Alasan: Pickle adalah modul standar Python untuk serialisasi (saving) dan deserialisasi (loading) objek Python, sangat umum digunakan untuk menyimpan model ML scikit-learn.
+
+---
+
+Soal 8:
+Anda sedang mengerjakan tugas klasifikasi dengan dataset yang sangat tidak seimbang (2% positif). Manakah pendekatan yang optimal?
+A. Oversample transaksi penipuan dengan menduplikasi instance.
+B. Undersample transaksi normal dengan menghapus instance secara acak.
+C. Menggunakan model random forest.
+D. Menggunakan model support-vector machine.
+
+Jawaban: A (Oversample transaksi penipuan)
+Alasan: Dengan hanya 2% data positif, undersampling data negatif (98%) akan membuang sejumlah besar informasi. Oversampling data positif (seperti dengan SMOTE atau duplikasi) umumnya lebih disukai untuk mempertahankan informasi kelas mayoritas.
+
+---
+
+Soal 9:
+Apa perbedaan antara standardisasi dan transformasi log?
+A. Transformasi log mengubah bentuk distribusi, sedangkan standardisasi menjaga bentuk distribusi tetap seperti aslinya.
+B. Transformasi log digunakan ketika fitur berada dalam skala yang berbeda, sedangkan standardisasi digunakan ketika kita ingin memastikan rata-rata nol.
+C. Transformasi log menskalakan nilai di antara, sedangkan standardisasi tidak terikat.
+D. Transformasi log hanya berfungsi ketika data memiliki distribusi Gaussian.
+
+Jawaban: A (Transformasi log mengubah bentuk distribusi...)
+Alasan: Standardisasi (Z-score) hanya menggeser dan menskalakan ulang data (pusat di 0, std dev 1) tanpa mengubah bentuk distribusi (skewness tetap sama). Transformasi log secara fundamental mengubah bentuk distribusi, sering digunakan untuk menormalkan distribusi yang right-skewed.
+
+---
+
+Soal 10:
+Dataset Anda berisi fitur untuk "jumlah kamar tidur" dengan nilai-nilai seperti "studio" dan "4+ BR". Teknik manakah yang PALING tepat?
+A. Biarkan fitur apa adanya.
+B. Ganti semua entri non-numerik dengan median.
+C. Hapus seluruh kolom.
+D. Gunakan one-hot encoding untuk membuat fitur biner terpisah untuk setiap nilai unik.
+
+Jawaban: D (Gunakan one-hot encoding)
+Alasan: Karena kolom berisi data campuran (kategorikal seperti "studio" dan numerik/ordinal yang tidak jelas seperti "4+"), memperlakukannya sebagai fitur kategorikal dengan One-Hot Encoding adalah cara paling aman agar model dapat memproses semua informasinya.
+
+---
+
+Soal 11:
+Manakah dari berikut ini kerugian dari model yang merayapi (crawl) web untuk konten HTML?
+A. HTML dapat dengan mudah dikonversi menjadi JSON.
+B. Jika struktur konten HTML berubah, kode juga harus diubah.
+C. Diperlukan pengetahuan lanjutan tentang HTML.
+D. Datanya terstruktur.
+
+Jawaban: B (Jika struktur konten HTML berubah...)
+Alasan: Web crawler sangat bergantung pada struktur DOM HTML. Jika pemilik website mengubah layout atau nama class/id elemen, skrip scraping seringkali akan gagal dan perlu diperbaiki.
+
+---
+
+Soal 12:
+Manakah dari berikut ini cara TERBAIK untuk mengekstrak fitur dari kolom product_type (misal: pakaian, makanan)?
+A. Hapus kolom sama sekali.
+B. Menggunakan label encoding.
+C. Menggunakan one-hot encoding untuk mengubah kategori produk menjadi vektor.
+D. Menggunakan word embeddings.
+
+Jawaban: C (Menggunakan one-hot encoding)
+Alasan: Untuk data kategorikal nominal (tidak ada urutan inheren, dan jumlah kategori terbatas), One-Hot Encoding adalah standar karena mencegah model mengasumsikan urutan matematis yang salah (yang terjadi pada Label Encoding).
+
+---
+
+Soal 13:
+Apa yang diwakili oleh R-squared?
+A. Proporsi varians dalam model klasifikasi.
+B. Proporsi varians untuk variabel dependen yang dijelaskan oleh variabel independen dalam model regresi.
+C. Proporsi varians untuk variabel independen yang dijelaskan oleh variabel dependen.
+D. Proporsi varians dalam model klasifikasi.
+
+Jawaban: B (Proporsi varians untuk variabel dependen...)
+Alasan: R-squared (koefisien determinasi) adalah metrik statistik dalam regresi yang menunjukkan seberapa baik data cocok dengan model regresi (goodness of fit).
+
+---
+
+Soal 14:
+Seorang data scientist hanya mengumpulkan dan menyimpan data yang diperlukan dan menghapus data yang tidak lagi dibutuhkan. Prinsip apa ini?
+A. Akuntabilitas
+B. Akurasi
+C. Minimisasi data (Data minimization)
+D. Batasan tujuan
+
+Jawaban: C (Minimisasi data)
+Alasan: Prinsip minimisasi data menyatakan bahwa data pribadi harus memadai, relevan, dan terbatas pada apa yang diperlukan sehubungan dengan tujuan pemrosesannya.
+
+---
+
+Soal 15:
+Sebuah model mulai menghasilkan positif palsu (model drift). Tim mendapatkan wawasan tentang fitur yang menyebabkan pergeseran untuk mengkalibrasi ulang. Metode mana yang diterapkan?
+A. Ethical AI
+B. Explainable AI (XAI)
+C. Responsible AI
+D. Trustworthy AI
+
+Jawaban: B (Explainable AI)
+Alasan: Explainable AI bertujuan untuk membuat hasil model ML dapat dipahami oleh manusia. Mengetahui *mengapa* model membuat keputusan tertentu (seperti fitur mana yang menyebabkan drift) adalah inti dari XAI.
+
+---
+
+Soal 16:
+Manakah perbandingan yang akurat antara boosting dan bagging?
+A. Bagging dan boosting persis sama.
+B. Bagging adalah pengambilan sampel acak dengan penggantian, sedangkan boosting adalah pengambilan sampel dengan penggantian data berbobot.
+C. Bagging adalah pengambilan sampel acak tanpa penggantian, sedangkan boosting adalah oversampling.
+D. Bagging bersifat serial dan boosting bersifat paralel.
+
+Jawaban: B (Bagging adalah pengambilan sampel acak dengan penggantian...)
+Alasan: Bagging (Bootstrap Aggregating) menggunakan sampel acak uniform dengan penggantian untuk melatih model independen. Boosting melatih model secara berurutan, di mana setiap model baru berfokus pada instance yang salah diprediksi oleh model sebelumnya (instance diberi bobot lebih tinggi).
+
+---
+
+Soal 17:
+Teknik analisis data eksploratif manakah yang terbaik untuk mendeteksi nilai ekstrem yang mungkin membiaskan data?
+A. Uji Chi-squared.
+B. Uji-t.
+C. Principal component analysis.
+D. Membuat plot box-and-whisker untuk setiap fitur.
+
+Jawaban: D (Membuat plot box-and-whisker)
+Alasan: Box plot secara visual menampilkan distribusi data, termasuk median, kuartil, dan outlier (nilai ekstrem di luar "kumis"/whisker), sehingga sangat efektif untuk deteksi outlier.
+
+---
+
+Soal 18:
+Pendekatan mana yang PALING tepat untuk membuat dataset terpadu dari file datar dan tabel database yang berbagi "ID pelanggan"?
+A. Menambahkan data secara manual.
+B. Menggunakan fungsi VLOOKUP di Excel.
+C. Melakukan self join dalam database SQL.
+D. Menulis skrip Python kustom untuk membuat dataset yang bersih.
+
+Jawaban: D (Menulis skrip Python kustom...)
+Alasan: Python (dengan pustaka seperti Pandas) sangat kuat untuk ETL (Extract, Transform, Load). Anda dapat memuat kedua sumber, melakukan merge/join berdasarkan ID, menangani ketidakkonsistenan, dan membersihkan data dalam satu pipeline yang dapat diulang.
+
+---
+
+Soal 19:
+Apa baris kode yang tepat untuk memuat data ke DataFrame di Python menggunakan pandas?
+A. df = pd.read_csv(sample_file.csv)
+B. df = pd.read_csv('sample_file.csv')
+C. df = pd.read_csv('sample_file.xlsx')
+D. df = pd.read_csv(sample_file.xlsx)
+
+Jawaban: B (df = pd.read_csv('sample_file.csv'))
+Alasan: Nama file harus berupa string (diapit tanda kutip), dan fungsi `read_csv` adalah yang benar untuk file CSV.
+
+---
+
+Soal 20:
+Seorang data scientist menghapus data lokasi AS/Kanada karena mengira itu tidak relevan, padahal itu signifikan. Jenis bias apa ini?
+A. Exclusion bias (Bias pengecualian)
+B. Measurement bias
+C. Observer bias
+D. Sampling bias
+
+Jawaban: A (Exclusion bias)
+Alasan: Exclusion bias terjadi ketika peneliti atau analis membuang data (berdasarkan kriteria preprocessing) yang sebenarnya penting, sehingga sampel yang tersisa tidak lagi representatif atau valid untuk masalah tersebut.
+
+---
+
+Soal 21:
+Kata kunci SQL mana yang digunakan untuk mengambil data dari tabel database?
+A. FETCH
+B. GET
+C. PULL
+D. SELECT
+
+Jawaban: D (SELECT)
+Alasan: SELECT adalah perintah standar SQL (DML) untuk memilih (mengambil) data dari database.
+
+---
+
+Soal 22:
+Metode mana yang umumnya TIDAK disarankan untuk menangani data yang hilang?
+A. Mengimputasi menggunakan rata-rata atau median.
+B. Menghapus baris dengan nilai yang hilang.
+C. Menggunakan model untuk memprediksi.
+D. Mengganti nilai yang hilang dengan angka acak.
+
+Jawaban: D (Mengganti nilai yang hilang dengan angka acak)
+Alasan: Mengganti missing values dengan angka acak akan memperkenalkan noise (gangguan) ke dalam data dan merusak pola/korelasi yang ada, yang sangat berbahaya bagi performa model.
+
+---
+
+Soal 23:
+Manakah dari berikut ini yang menjelaskan opsi skip-gram dalam konteks Word2Vec?
+A. Menormalisasi frekuensi.
+B. Model embedding dalam transformer.
+C. Memprediksi kata yang hilang berdasarkan kata-kata di sekitarnya.
+D. Memprediksi kata-kata di sekitarnya dari kata input yang diberikan.
+
+Jawaban: D (Memprediksi kata-kata di sekitarnya...)
+Alasan: Word2Vec memiliki dua arsitektur utama: CBOW (Continuous Bag of Words) yang memprediksi kata target dari konteks, dan Skip-gram yang memprediksi konteks (kata-kata sekitar) dari kata target (input).
+
+---
+
+Soal 24:
+Apa keuntungan utama menggunakan data lake?
+A. Ideal untuk BI dengan format yang konsisten.
+B. Menghilangkan kebutuhan akan transformasi.
+C. Menegakkan organisasi terstruktur.
+D. Memungkinkan penyimpanan volume besar data mentah yang tidak terstruktur.
+
+Jawaban: D (Memungkinkan penyimpanan volume besar data mentah...)
+Alasan: Data Lake dirancang untuk menyimpan data dalam format aslinya (raw), baik itu terstruktur, semi-terstruktur, atau tidak terstruktur, dalam skala besar, berbeda dengan Data Warehouse yang biasanya terstruktur (schema-on-write).
+
+---
+
+Soal 25:
+Jika angka-angka berikut mewakili p-value, manakah di antaranya yang signifikan pada tingkat 95%?
+A. 0.01
+B. 0.06
+C. 0.90
+D. 0.98
+
+Jawaban: A (0.01)
+Alasan: Tingkat signifikansi 95% berarti alpha = 0.05. Sebuah hasil dikatakan signifikan secara statistik jika p-value < alpha (0.05). Nilai 0.01 lebih kecil dari 0.05.
+
+---
+
+Soal 26:
+Survei meminta konsumen untuk memilih perusahaan teknologi mana yang mereka sukai (A, B, C, D). Jenis data apa yang dikumpulkan?
+A. Data interval
+B. Data rasio
+C. Data nominal
+D. Data kontinu
+
+Jawaban: C (Data nominal)
+Alasan: Data nominal digunakan untuk memberi label variabel tanpa nilai kuantitatif atau urutan. Nama perusahaan (A, B, C, D) hanyalah label kategori.
+
+---
+
+Soal 27:
+Manakah dari berikut ini yang merupakan teknik reduksi dimensi, KECUALI?
+A. Principal component analysis (PCA)
+B. Random forest
+C. Singular value decomposition (SVD)
+D. t-distributed stochastic neighbor embedding (t-SNE)
+
+Jawaban: B (Random forest)
+Alasan: PCA, SVD, dan t-SNE adalah teknik reduksi dimensi. Random Forest adalah algoritma ensemble untuk klasifikasi dan regresi (meskipun bisa digunakan untuk seleksi fitur, ia bukan teknik reduksi dimensi dalam arti transformasi ruang fitur).
+
+---
+
+Soal 28:
+Kode mana yang menghasilkan ringkasan statistik dari bingkai data, df, di pandas?
+A. df.describe()
+B. df.shape
+C. df.size()
+D. df.summary()
+
+Jawaban: A (df.describe())
+Alasan: `df.describe()` adalah metode Pandas yang menampilkan statistik deskriptif ringkas (count, mean, std, min, kuartil, max) untuk kolom numerik. `df.summary()` tidak ada di Pandas (umum di R).
+
+---
+
+Soal 29:
+Pasangan metrik mana yang tahan terhadap outlier?
+A. Mean dan rentang interkuartil
+B. Mean dan standar deviasi
+C. Median dan rentang interkuartil (IQR)
+D. Median dan standar deviasi
+
+Jawaban: C (Median dan rentang interkuartil)
+Alasan: Mean dan standar deviasi sangat dipengaruhi oleh nilai ekstrem. Median (nilai tengah) dan IQR (selisih Q3 dan Q1) didasarkan pada posisi/peringkat data, sehingga tidak terpengaruh oleh seberapa jauh nilai ekstrem berada.
+
+---
+
+Soal 30:
+Apa praktik terbaik untuk menangani nilai yang hilang dalam kolom deret waktu (time series)?
+A. Abaikan nilai yang hilang.
+B. Terapkan metode imputasi yang sesuai berdasarkan sifat data.
+C. Hapus catatan.
+D. Gunakan nilai yang paling sering.
+
+Jawaban: B (Terapkan metode imputasi yang sesuai...)
+Alasan: Dalam time series, urutan waktu penting. Menghapus data akan memutus kontinuitas waktu. Metode imputasi seperti interpolasi (linear, spline) atau forward fill/backward fill biasanya lebih tepat daripada mean/mode global.
+
+---
+
+Soal 31:
+Dalam deteksi spam, untuk menghindari kehilangan email penting (meminimalkan False Positives pada Ham), metrik mana yang harus digunakan?
+A. Akurasi
+B. Skor F1
+C. Presisi (Precision)
+D. Recall
+
+Jawaban: C (Presisi)
+Alasan: Presisi = TP / (TP + FP). Kita ingin meminimalkan False Positive (email Ham yang salah diklasifikasikan sebagai Spam). Presisi tinggi berarti ketika model mengatakan "ini spam", kemungkinan besar itu benar-benar spam (sangat sedikit FP).
+
+---
+
+Soal 32:
+Strategi mana yang dapat digunakan untuk meningkatkan kekuatan model statistik (statistical power)?
+A. Kurangi ukuran sampel
+B. Kurangi ukuran populasi
+C. Tingkatkan ukuran sampel
+D. Tingkatkan ukuran populasi
+
+Jawaban: C (Tingkatkan ukuran sampel)
+Alasan: Statistical power (kekuatan uji) berhubungan langsung dengan ukuran sampel. Semakin besar sampel, semakin kecil standar error, dan semakin besar kemungkinan untuk mendeteksi efek yang sebenarnya ada (menolak hipotesis nol yang salah).
+
+---
+
+Soal 33:
+Mengapa penggunaan PCA dengan TF-IDF tidak disarankan?
+A. TF-IDF menghasilkan dataset kategorikal.
+B. TF-IDF menghasilkan matriks jarang (sparse), dan PCA adalah opsi yang lambat untuk matriks jarang (dan menghancurkan sparsity).
+C. TF-IDF menghasilkan dataset dimensi besar.
+D. TF-IDF menghasilkan fitur numerik.
+
+Jawaban: B (TF-IDF menghasilkan matriks jarang...)
+Alasan: TF-IDF menghasilkan matriks yang sangat sparse (banyak nol). PCA standar (non-truncated) akan memusatkan data (dikurangi mean), yang mengubah nol menjadi tidak nol, sehingga menghancurkan sparsity dan memakan memori sangat besar (menjadi dense matrix). SVD atau TruncatedSVD lebih disukai untuk sparse matrix.
+
+---
+
+Soal 34:
+Analisis apa yang terbaik untuk mengetahui hubungan antara harga rumah (kontinu) dan beberapa fitur (tahun, luas tanah, kamar mandi)?
+A. Pengambilan sampel klaster
+B. Regresi logistik
+C. Regresi berganda (Multiple regression)
+D. Regresi linier sederhana
+
+Jawaban: C (Regresi berganda)
+Alasan: Karena targetnya adalah variabel kontinu (harga rumah) dan ada lebih dari satu variabel independen, regresi linier berganda adalah metode yang tepat. Regresi logistik untuk target kategori; regresi sederhana hanya untuk satu variabel independen.
+
+---
+
+Soal 35:
+Model yang dilatih di Wikipedia menghasilkan analogi yang bias gender (pria: dokter :: wanita: perawat). Jenis bias apa?
+A. Bias konfirmasi
+B. Bias atribusi kelompok
+C. Bias historis
+D. Bias pelaporan (Reporting bias)
+
+Jawaban: C (Reporting bias / Bias pelaporan) [Koreksi dari sumber soal asli yang mungkin menjawab C/Historical]
+*Catatan: Jika kunci jawaban di soal asli C (Historical), itu masuk akal karena data mencerminkan sejarah. Namun seringkali bias teks dari korpus web dikategorikan sebagai bias pelaporan (frekuensi kejadian di teks tidak mencerminkan dunia nyata atau mencerminkan bias penulis).*
+Berdasarkan kunci: C (Historical bias sesuai konteks soal ini biasanya merujuk pada bias yang sudah ada di data dunia nyata/sejarah). Tapi opsi D juga sering relevan. Kita ikuti kunci C.
+Alasan: Bias historis/societal bias yang sudah ada di dunia nyata (di mana secara historis lebih banyak dokter pria) tercermin dalam data pelatihan.
+
+---
+
+Soal 36:
+Dalam uji A/B, item mana yang harus digunakan untuk mengaitkan pesanan dengan grup tempat klien ditugaskan?
+A. ID Cookie
+B. ID Pelanggan (Customer ID)
+C. ID Perangkat
+D. Alamat IP
+
+Jawaban: B (ID Pelanggan)
+Alasan: Customer ID adalah pengenal yang paling stabil dan unik untuk pengguna yang login. Cookie bisa dihapus, perangkat bisa berganti, IP bisa dinamis. Customer ID memastikan konsistensi pelacakan lintas perangkat.
+
+---
+
+Soal 37:
+Dataset yang dihasilkan mana yang dapat digunakan untuk mengurangi data pelatihan yang tidak mencukupi DAN perlindungan privasi pasien?
+A. Data tiruan (Mock data)
+B. Data acak
+C. Data anonim
+D. Data sintetis yang dihasilkan AI
+
+Jawaban: D (Data sintetis yang dihasilkan AI)
+Alasan: Data sintetis meniru properti statistik data asli tanpa memuat informasi pribadi individu asli, sehingga aman untuk privasi dan bisa dihasilkan dalam jumlah tak terbatas untuk augmentasi data.
+
+---
+
+Soal 38:
+Manakah dari metode berikut yang TIDAK DAPAT digunakan untuk reduksi dimensi (pada dataset)?
+A. CBOW
+B. PCA
+C. t-SNE
+D. UMAP
+
+Jawaban: A (CBOW)
+Alasan: CBOW (Continuous Bag of Words) adalah arsitektur Word2Vec untuk membuat word embeddings, bukan teknik reduksi dimensi umum untuk dataset tabular seperti PCA, t-SNE, atau UMAP.
+
+---
+
+Soal 39:
+Fungsi sigmoid paling sering digunakan sebagai aktivasi layer terakhir untuk jenis masalah apa?
+A. Klasifikasi biner
+B. Klasifikasi multi-kelas
+C. Klasifikasi multi-label
+D. Regresi Ridge
+
+Jawaban: A (Klasifikasi biner)
+Alasan: Sigmoid memetakan output ke rentang [0,1], yang dapat diinterpretasikan sebagai probabilitas kejadian dalam klasifikasi biner (0 atau 1).
+
+---
+
+Soal 40:
+Fungsi loss mana yang paling umum digunakan untuk model klasifikasi?
+A. Cross-entropy
+B. Hinge
+C. Mean absolute error
+D. Mean square error
+
+Jawaban: A (Cross-entropy)
+Alasan: Cross-entropy (atau Log Loss) adalah standar defacto untuk mengukur performa model klasifikasi yang outputnya berupa probabilitas antara 0 dan 1.
+
+---
+
+Soal 41:
+Sumber data pihak ketiga mana yang paling hemat biaya untuk menargetkan pelanggan menggunakan data demografis?
+A. Data dari biro sensus pemerintah publik
+B. Data yang dikumpulkan oleh perusahaan pakaian itu sendiri
+C. Data dari perusahaan pengukuran swasta
+D. Data dari perusahaan pengiriman
+
+Jawaban: C (Data dari perusahaan pengukuran swasta)
+*Koreksi/Catatan: Kunci jawaban asli C. Namun biasanya data publik (A) lebih murah/gratis. Tetapi "target pelanggan" mungkin butuh data mikro level individu yang dijual broker data (private measurement company).*
+Jika "hemat biaya" berarti ROI terbaik untuk targeting spesifik, data pihak ketiga (broker data) sering jadi pilihan meski berbayar.
+Jawaban C (berdasarkan kunci).
+
+---
+
+Soal 42:
+Mengapa penting untuk membagi dataset menjadi set pelatihan dan pengujian?
+A. Untuk memastikan model dilatih lebih cepat.
+B. Untuk mengevaluasi kinerja model pada data yang tidak terlihat (unseen data).
+C. Untuk menambah ukuran dataset.
+D. Untuk mengurangi kebutuhan validasi silang.
+
+Jawaban: B (Untuk mengevaluasi kinerja model pada data yang tidak terlihat)
+Alasan: Tujuan utama ML adalah generalisasi. Kita menguji pada data yang tidak pernah dilihat model selama pelatihan untuk mensimulasikan kinerjanya di dunia nyata dan mendeteksi overfitting.
+
+---
+
+Soal 43:
+Kontrol mana yang paling efektif untuk memitigasi risiko selama fase pengumpulan data?
+A. Mengadopsi standar data terbuka
+B. Menilai kesalahan pelabelan data
+C. Berkomunikasi dengan pemerintah
+D. Membandingkan output model
+E. Mendokumentasikan kartu data (data cards)
+
+Jawaban: E (Mendokumentasikan kartu data)
+Alasan: Data Cards/Datasheets for Datasets adalah praktik dokumentasi standar yang menjelaskan konteks, niat, batasan, dan bias data. Ini transparansi kunci untuk mitigasi risiko di awal.
+
+---
+
+Soal 44:
+Kontrol mana yang paling efektif untuk memitigasi risiko selama fase pengumpulan data?
+A. Mengadopsi standar data terbuka
+B. Menilai kesalahan pelabelan data
+C. Berkomunikasi dengan pemerintah
+D. Membandingkan output model
+E. Mendokumentasikan kartu data (data cards)
+
+Jawaban: E
+(Ini duplikat soal 43, jawaban sama).
+
+---
+
+Soal 45:
+Kumpulan langkah keamanan mana yang melindungi saluran data (data pipelines)?
+A. Penambalan otomatis...
+B. Enkripsi, kontrol akses, dan segmentasi jaringan
+C. Enkripsi... antivirus
+D. Daftar putih...
+
+Jawaban: B (Enkripsi, kontrol akses, dan segmentasi jaringan)
+Alasan: Ini adalah prinsip keamanan defense-in-depth: Enkripsi melindungi data (at rest/in transit), kontrol akses (IAM) membatasi siapa yang bisa menyentuh data, dan segmentasi jaringan mencegah pergerakan lateral penyerang.
+
+---
+
+Soal 46:
+Perbedaan antara batch dan stochastic gradient descent?
+A. ...
+B. Batch menghitung gradien menggunakan seluruh set pelatihan, sedangkan stochastic menggunakan satu contoh (atau batch kecil).
+C. ...
+D. ...
+
+Jawaban: B
+Alasan: Batch Gradient Descent menghitung error rata-rata untuk seluruh dataset pelatihan sebelum memperbarui bobot (1 langkah per epoch). Stochastic Gradient Descent (SGD) memperbarui bobot setelah setiap contoh data (n langkah per epoch), yang lebih cepat tetapi lebih berisik (noisy).
+
+---
+
+Soal 47:
+Apa tujuan mendapatkan umpan balik dari model dalam produksi?
+A. Bandingkan hasil
+B. Untuk mendeteksi pergeseran model (model drift)
+C. Dapatkan wawasan untuk pemangku kepentingan
+D. Visualisasikan hasil
+
+Jawaban: B (Untuk mendeteksi model drift)
+Alasan: Model ML bisa menurun performanya seiring waktu karena data dunia nyata berubah (data drift) atau konsep target berubah (concept drift). Feedback loop diperlukan untuk memantau ini.
+
+---
+
+Soal 48:
+Untuk membangun kepercayaan dan transparansi yang lebih besar dengan klien, prinsip mana yang harus dikejar?
+A. Akuntabilitas
+B. Explainability (Keterjelaskan)
+C. Keadilan
+D. Interpretabilitas
+
+Jawaban: B (Explainability)
+Alasan: Explainability memungkinkan klien memahami "mengapa" dan "bagaimana" model mencapai keputusannya, yang merupakan kunci utama kepercayaan, terutama dalam industri yang diatur ketat.
+
+---
+
+Soal 49:
+Dengan data yang rapi (tidy data), setiap observasi...
+A. Hanya memiliki satu atribut.
+B. Berada di baris yang berbeda dalam dataset.
+C. Ada di tabel yang berbeda.
+D. Ada dalam satu kolom.
+
+Jawaban: B (Berada di baris yang berbeda)
+Alasan: Menurut prinsip Tidy Data (Hadley Wickham): 1. Setiap variabel adalah kolom. 2. Setiap observasi adalah baris. 3. Setiap nilai adalah sel.
+
+---
+
+Soal 50:
+Teknik mana yang berguna untuk memahami stabilitas kinerja model ketika data terbatas?
+A. k-fold cross-validation
+B. Bootstrapping
+C. LOOCV
+D. Random subsampling
+
+Jawaban: A (k-fold cross-validation)
+Alasan: Cross-validation (terutama k-fold) memungkinkan kita menggunakan seluruh data untuk pelatihan dan validasi secara bergantian, memberikan estimasi kinerja model yang lebih kuat dan stabil daripada single train-test split, terutama pada data kecil.
+
+---
+
+Soal 51:
+Transformasi data untuk meningkatkan prediksi pembelian (kuantitas numerik)?
+A. Menormalisasi kuantitas setiap item yang dibeli ke kisaran antara 0 dan 1.
+B. Mengonversi stempel waktu pembelian menjadi fitur hari dalam seminggu dan waktu hari.
+C. ...
+D. ...
+
+Jawaban: A (Menormalisasi kuantitas...)
+*Koreksi: Soal ini agak ambigu tanpa konteks penuh gambarnya. Namun berdasarkan opsi yang dipilih di kunci (A), normalisasi fitur numerik input (kuantitas item sebelumnya dll) adalah praktik standar agar model (terutama neural networks) konvergen lebih baik.*
+
+---
+
+Soal 52:
+Teknik mana yang paling efektif untuk menghindari overfitting dalam deep learning saat bekerja dengan dataset terbatas?
+A. Tingkat pembelajaran yang lebih besar
+B. Tingkatkan lapisan tersembunyi
+C. Terapkan teknik augmentasi data
+D. Gunakan regularisasi L1/L2
+
+Jawaban: D (Gunakan regularisasi L1/L2)
+*Catatan: Augmentasi data (C) juga SANGAT efektif untuk data terbatas (terutama gambar). Tapi L1/L2 (D) adalah teknik preventif dasar. Kunci di file AIKEN Anda adalah D.*
+
+---
+
+Soal 53:
+Pahami alasan utama churn pelanggan. Jenis masalah apa?
+A. NLP
+B. Klasifikasi
+C. Deret waktu
+D. Deteksi anomali
+
+Jawaban: B (Klasifikasi)
+Alasan: Churn prediction biasanya dimodelkan sebagai masalah klasifikasi biner: Apakah pelanggan akan churn (Ya/1) atau Tidak (Tidak/0) dalam periode tertentu. Analisis fitur penting (feature importance) dari model klasifikasi ini memberikan "alasan utama".
+
+---
+
+Soal 54:
+Metrik mana yang paling umum digunakan untuk mengevaluasi model regresi?
+A. Akurasi
+B. Skor F1
+C. Median absolute error
+D. Skor R-squared
+E. Root mean squared error (RMSE)
+
+Jawaban: E (RMSE)
+Alasan: RMSE adalah metrik standar emas untuk regresi karena memberikan bobot lebih pada kesalahan besar dan unitnya sama dengan unit target (y), sehingga mudah diinterpretasikan.
+
+---
+
+Soal 55:
+Pernyataan manakah tentang mean dan median yang BENAR?
+A. ...
+B. ...
+C. ...
+D. Median berguna ketika data sangat miring (skewed) dan mengandung outlier ekstrem.
+
+Jawaban: D
+Alasan: Median adalah ukuran tendensi sentral yang "robust" (tahan) terhadap outlier. Mean akan "tertarik" ke arah outlier, memberikan gambaran yang bias tentang pusat data.
+
+---
+
+Soal 56:
+Contoh kerangka kerja open-source untuk membangun API dengan Python?
+A. Apache Wicket
+B. Eagle
+C. Flask
+D. Spring
+
+Jawaban: C (Flask)
+Alasan: Flask (dan Django, FastAPI) adalah framework web Python yang paling populer. Apache Wicket dan Spring berbasis Java.
+
+---
+
+Soal 57:
+Demokratisasi data melibatkan pembuatan data menjadi:
+A. Tersedia dan fleksibel
+B. Dapat dioperasikan dan portabel
+C. Skala dan dapat diperluas
+D. Dapat dipahami dan dapat ditindaklanjuti (Understandable and actionable)
+
+Jawaban: D
+Alasan: Demokratisasi data bukan sekadar akses (availability), tapi memberdayakan pengguna non-teknis untuk *memahami* data dan mengambil keputusan *tindakan* darinya.
+
+---
+
+Soal 58:
+Pernyataan manakah yang paling menggambarkan observabilitas data (data observability)?
+A. ...
+B. ...
+C. Memberikan visibilitas ke dalam keseluruhan kesehatan dan keadaan data.
+D. ...
+
+Jawaban: C
+Alasan: Data observability melampaui monitoring (apakah pipeline gagal?) ke pemahaman mendalam tentang kualitas data, kesegaran, distribusi, dan lineage (kesehatan menyeluruh).
+
+---
+
+Soal 59:
+Langkah mana yang biasanya dilakukan selama persiapan data SEBELUM rekayasa fitur?
+A. Menangani nilai yang hilang (Handle missing values).
+B. Kurangi dimensi menggunakan KNN.
+C. ...
+D. ...
+
+Jawaban: A (Menangani nilai yang hilang)
+Alasan: Sebagian besar algoritma ML tidak dapat memproses nilai Null/NaN. Jadi imputasi atau penghapusan missing values adalah langkah pra-syarat (cleaning) sebelum kita bisa membuat fitur baru (feature engineering).
+
+---
+
+Soal 60:
+Fungsi pandas mana yang menghitung hasil yang ditunjukkan (menggabungkan 'left' dan 'right')?
+A. ...
+D. pd.merge()
+
+Jawaban: D
+Alasan: `pd.merge()` adalah fungsi standar pandas untuk operasi join gaya database (SQL JOIN) antar DataFrame.
+
+---
+
+Soal 61:
+Pernyataan manakah yang BENAR tentang penskalaan fitur?
+A. ...
+C. Algoritma berbasis pohon (tree-based) adalah yang paling tidak sensitif terhadap skala fitur.
+D. ...
+
+Jawaban: C
+Alasan: Decision Trees (dan ensemble-nya seperti Random Forest, XGBoost) membagi data berdasarkan urutan nilai (threshold: x > 5), bukan jarak euclidean atau perkalian matriks. Jadi penskalaan nilai (misal rentang 0-1 vs 0-1000) tidak mengubah struktur pohon yang dihasilkan.
+
+---
+
+Soal 62:
+Jenis pemodelan mana yang merupakan pembelajaran tanpa pengawasan (unsupervised learning)?
+A. Klasifikasi
+B. Clustering
+C. Peramalan
+D. Regresi
+
+Jawaban: B (Clustering)
+Alasan: Clustering (pengelompokan) tidak memiliki label target (y). Algoritma mencari pola/struktur inheren dalam data (X) saja. Klasifikasi dan Regresi adalah supervised (ada target).
+
+---
+
+Soal 63:
+Lonjakan besar dalam sentimen negatif pada tanggal tertentu. Tindakan?
+A. ...
+C. Analisis konten postingan di sekitar tanggal lonjakan untuk memahami alasannya.
+D. ...
+
+Jawaban: C
+Alasan: Dalam analisis sentimen, "mengapa" (root cause analysis) adalah langkah actionable berikutnya setelah mendeteksi anomali.
+
+---
+
+Soal 64:
+Nilai yang tidak realistis seperti "50 kamar tidur" di apartemen kecil. Bagaimana cara mempersiapkannya?
+A. Hapus catatan ini karena mungkin merupakan kesalahan data.
+B. ...
+
+Jawaban: A
+Alasan: Ini adalah data error/garbage. Jika jumlahnya kecil dan jelas salah, menghapusnya (cleaning) lebih aman daripada mengimputasi yang mungkin bias.
+
+---
+
+Soal 65:
+Tantangan dalam validasi data?
+A. Mendefinisikan aturan yang memeriksa integritas dan kejelasan data.
+B. ...
+
+Jawaban: A
+Alasan: Bagian tersulit adalah mengetahui *apa* yang benar (business rules/constraints) dan menerjemahkannya ke dalam aturan teknis otomatis.
+
+---
+
+Soal 66:
+Metrik yang paling tepat untuk klasifikasi dataset yang sangat tidak seimbang?
+A. ...
+D. Skor F1
+
+Jawaban: D (Skor F1)
+Alasan: Akurasi menyesatkan pada data tidak seimbang (predicting all majority class gives high accuracy). F1-score adalah harmonic mean dari Precision dan Recall, memberikan keseimbangan yang lebih baik.
+
+---
+
+Soal 67:
+Regex mana yang memisahkan '1991Smith' menjadi tahun dan keluarga?
+A. df['year_family'].str.split('(\d+)([A-Za-z]+)', expand=True)
+
+Jawaban: A
+Alasan: `\d+` cocok dengan satu atau lebih digit (1991), `[A-Za-z]+` cocok dengan huruf (Smith). Tanda kurung `()` membuat capturing group untuk split.
+
+---
+
+Soal 68:
+Pelanggan menolak cookie tetapi menegaskan pesan pemasaran. Jenis persetujuan apa?
+A. Eksplisit
+B. Implisit
+...
+
+Jawaban: A (Eksplisit)
+Alasan: Jika pelanggan secara aktif menegaskan ("affirms") pesan pemasaran (misal mencentang kotak), itu adalah persetujuan eksplisit.
+
+---
+
+Soal 69:
+Bagaimana alat seperti dbt dan Fivetran berkontribusi pada efisiensi?
+A. ...
+B. Dengan mengotomatisasi ekstraksi data dan proses transformasi untuk konsistensi.
+
+Jawaban: B
+Alasan: Fivetran mengotomatisasi EL (Extract-Load), dbt mengotomatisasi T (Transform) dalam stack Analytics Engineering modern.
+
+---
+
+Soal 70:
+Transformasi penting untuk menyiapkan variabel kategorikal untuk regresi linier?
+A. ...
+C. Mengkodekan variabel kategorikal menggunakan one-hot encoding.
+
+Jawaban: C
+Alasan: Regresi linier adalah model matematis. Ia tidak bisa memproses string "Merah", "Biru". One-hot encoding mengubahnya menjadi angka (0/1).
+
+---
+
+Soal 71:
+Perubahan kecil yang disengaja pada data input untuk mengamati efek (ketahanan/robustness). Metode?
+A. ...
+B. Perturbation (Perturbasi)
+
+Jawaban: B
+Alasan: Perturbasi adalah istilah teknis untuk menambahkan noise kecil ke input untuk menguji stabilitas model.
+
+---
+
+Soal 72:
+R-squared digunakan untuk mengevaluasi...
+A. ...
+D. model regresi.
+
+Jawaban: D
+Alasan: R^2 adalah metrik standar regresi.
+
+---
+
+Soal 73:
+Data scientist salah menyimpulkan perlakuan baru efektif padahal tidak.
+A. Kesalahan Tipe I (Type I Error)
+B. Kesalahan Tipe II
+...
+
+Jawaban: A (Type I Error)
+Alasan: Type I Error = False Positive. Menolak Hipotesis Nol yang benar. (Menyimpulkan ada efek, padahal tidak ada).
+
+---
+
+Soal 74:
+Variabel ordinal (Rendah, Sedang, Tinggi). Transformasi?
+A. ...
+C. Memetakan level kategorikal ke urutan numerik yang sesuai.
+
+Jawaban: C (Ordinal Encoding)
+Alasan: Karena data memiliki urutan (Rendah < Sedang < Tinggi), memetakan ke (0, 1, 2) mempertahankan informasi urutan tersebut, yang hilang jika menggunakan One-Hot.
+
+---
+
+Soal 75:
+Metode untuk menentukan variabel yang berlebihan (redundant)?
+A. ...
+C. Menghitung koefisien korelasi berpasangan (pairwise correlation).
+
+Jawaban: C
+Alasan: Jika dua variabel memiliki korelasi sangat tinggi (mendekati 1 atau -1), mereka membawa informasi yang sama (multikolinearitas). Salah satu bisa dibuang (redundant).
+
+---
+
+Soal 76:
+Kelemahan mengisi nilai yang hilang dengan meann/median?
+A. ...
+C. Kehilangan korelasi dengan fitur lain.
+
+Jawaban: C
+Alasan: Imputasi univariat (mean/median) mengasumsikan fitur independen. Ini mengurangi varians variabel dan mendistorsi kovarians/korelasi dengan variabel lain.
+
+---
+
+Soal 77:
+Kerugian dari ReLU?
+A. ...
+D. Itu tidak dipusatkan pada nol (not zero-centered).
+
+Jawaban: D
+Alasan: Output ReLU adalah [0, infinity]. Rata-rata aktivasi selalu positif (>0), yang bisa menyebabkan dinamika "zzig-zag" dalam update bobot gradient descent, memperlambat konvergensi dibanding fungsi zero-centered (seperti Tanh).
+
+---
+
+Soal 78:
+Apa implikasi paling umum dari penggunaan dataset yang tidak cukup besar?
+A. ...
+D. Kurangnya generalisasi pada model yang dilatih.
+
+Jawaban: D
+Alasan: Jika data sedikit, model cenderung menghafal data (overfitting) dan gagal menangkap pola umum populasi, sehingga performa buruk pada data baru (generalisasi buruk).
+
+---
+
+Soal 79:
+Pernyataan manakah tentang diagram batang dan histogram yang SALAH?
+A. ...
+C. Baik histogram maupun diagram batang menunjukkan distribusi.
+
+Jawaban: C
+Alasan: Histogram menunjukkan distribusi data (frekuensi data kontinu dalam bin). Bar chart membandingkan nilai antar kategori diskrit. Bar chart TIDAK menunjukkan distribusi probabilitas.
+
+---
+
+Soal 80:
+Tim data science GDPR harus:
+A. Mengidentifikasi data pribadi apa yang akan dikumpulkan, dengan cara apa, dan untuk tujuan apa.
+
+Jawaban: A
+Alasan: Transparansi data collection adalah pilar utama GDPR (Pasal 13).
+
+---
+
+Soal 81:
+Manakah yang menjelaskan TF-IDF?
+A. ...
+C. Itu membuat ruang fitur dengan mengidentifikasi frekuensi setiap kata dalam baris tertentu dan keumuman kata-kata di seluruh dataset.
+
+Jawaban: C
+Alasan: TF (Term Frequency) = frekuensi di dokumen. IDF (Inverse Document Frequency) = seberapa unik di seluruh korpus.
+
+---
+
+Soal 82:
+Ukuran minimum ideal untuk set pengujian?
+A. ...
+C. 20% dari total data
+
+Jawaban: C
+Alasan: Aturan praktis (rule of thumb) klasik adalah pareto split (80/20) atau 70/30. 20% adalah batas bawah umum yang wajar.
+
+---
+
+Soal 83:
+Metode untuk menghindari kutukan dimensi (curse of dimensionality)?
+A. ...
+B. Principal component analysis (PCA)
+
+Jawaban: B
+Alasan: PCA mengurangi dimensi dengan memproyeksikan data ke komponen utama yang menangkap varians terbesar, efektif mengurangi jumlah fitur.
+
+---
+
+Soal 84:
+Regresi mana yang menghilangkan fitur yang tidak relevan?
+A. Regresi Lasso
+
+Jawaban: A
+Alasan: Lasso (L1 Regularization) memiliki properti membuat bobot fitur menjadi tepat nol, secara efektif melakukan seleksi fitur. Ridge hanya mengecilkan bobot mendekati nol.
+
+---
+
+Soal 85:
+Keuntungan mengumpulkan lebih banyak contoh pelatihan?
+A. ...
+B. Ini membantu dalam menggeneralisasi model.
+
+Jawaban: B
+Alasan: Lebih banyak data = representasi populasi lebih baik = varians model lebih rendah = generalisasi lebih baik.
+
+---
+
+Soal 86:
+Teknik explainability untuk kontribusi prediksi skor kredit?
+A. ...
+C. SHapley Additive exPlanations (SHAP)
+
+Jawaban: C
+Alasan: SHAP (berdasarkan game theory) adalah state-of-the-art untuk explainability lokal, memberikan kontribusi tepat tiap fitur terhadap prediksi individual.
+
+---
+
+Soal 87:
+Tujuan Kubernetes dan Docker dalam pipeline?
+A. ...
+D. Untuk mengenkapsulasi dan menskalakan penyebaran aplikasi di berbagai lingkungan secara konsisten.
+
+Jawaban: D
+Alasan: Docker mengenkapsulasi (containerization), Kubernetes mengelola skala dan orkestrasi.
+
+---
+
+Soal 88:
+Toko kelontong mengumpulkan data riwayat pembelian. Jenis?
+A. Data pihak pertama (First-party data)
+
+Jawaban: A
+Alasan: Data yang dikumpulkan perusahaan langsung dari pelanggannya sendiri adalah First-party data.
+
+---
+
+Soal 89:
+Query mana yang mengembalikan hasil yang ditampilkan (Budget per Project)?
+A. ...
+D. SELECT Project_ID, SUM(Rate) as Budget FROM Employee_Table as e left join...
+
+Jawaban: D
+Alasan: Left join memastikan semua record dari tabel kiri (Employee/Project in context) dipertahankan. (Tergantung gambar tabel sebenarnya, tapi Left Join biasanya aman untuk agregasi master-detail. Di soal AIKEN key jawaban D).
+
+---
+
+I will write this content to the file.

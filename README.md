@@ -1,8 +1,8 @@
-# Gamifikasi Business Analysis - Snakes & Ladders
+# Gamifikasi Machine Learning - Ular Tangga
 
-Project ini adalah sebuah game edukasi **Ular Tangga (Snakes & Ladders)** yang dirancang untuk membantu pembelajaran konsep-konsep **Business Analysis**.
+Project ini adalah sebuah game edukasi **Ular Tangga (Snakes & Ladders)** yang dirancang untuk membantu pembelajaran konsep-konsep dasar **Machine Learning**.
 
-Game ini menggabungkan mekanik permainan klasik dengan kuis interaktif yang menguji pemahaman pemain tentang materi Business Analysis.
+Game ini menggabungkan mekanik permainan klasik dengan kuis interaktif yang menguji pemahaman pemain tentang materi Machine Learning, seperti Supervised Learning, Unsupervised Learning, overfitting, metrik evaluasi, dan lain-lain.
 
 ## 🌟 Fitur Utama
 
@@ -62,4 +62,4 @@ Lalu buka browser di `http://localhost:8080`
 Silakan ajukan **Pull Request** atau buat **Issue** jika Anda menemukan bug atau ingin menambahkan fitur baru.
 
 ---
-*Dibuat untuk tujuan edukasi Business Analysis.*
+*Dibuat untuk tujuan edukasi Machine Learning.*
