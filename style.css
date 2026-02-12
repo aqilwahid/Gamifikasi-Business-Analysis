@@ -125,9 +125,9 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    /* Let clicks pass through */
     z-index: 5;
-    /* Above board background, below tokens */
+    display: none;
+    /* Hide SVG lines as the image likely has them */
 }
 
 .board {
@@ -136,36 +136,41 @@ body {
     grid-template-rows: repeat(10, 1fr);
     width: 100%;
     height: 100%;
-    /* Fill container */
     max-width: 80vh;
-    /* Keep aspect ratio roughly */
     max-height: 80vh;
     aspect-ratio: 1 / 1;
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     position: relative;
-    background-size: cover;
+    background-image: url('Asset/Board Ular Tangga.png');
+    background-size: 100% 100%;
     background-position: center;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    padding: 0% 0.5% 1% 2.5%;
+    /* Shift UP (0% top) and RIGHT (1.5% left) */
     z-index: 1;
 }
 
 .cell {
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: none;
+    /* Hide borders */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 4px;
     font-size: 0.8rem;
-    color: var(--text-muted);
+    color: transparent;
+    /* Hide numbers */
     position: relative;
 }
 
 .cell:nth-child(even) {
-    background: var(--board-light);
+    background: transparent;
 }
 
 .cell:nth-child(odd) {
-    background: var(--board-dark);
+    background: transparent;
 }
 
 /* Snakes and Ladders Overlays (Pseudo-elements or absolute divs) */
@@ -425,15 +430,7 @@ body {
 }
 
 /* Winner Selection UI */
-.alert-box {
-    background: rgba(34, 197, 94, 0.2);
-    border: 1px solid #22c55e;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    font-weight: bold;
-    color: #4ade80;
-}
+
 
 .player-checkbox-grid {
     display: flex;

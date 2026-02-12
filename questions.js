@@ -298,5 +298,245 @@ const QUESTIONS = [
             "Teks"
         ],
         "correctAnswer": 2
+    },
+    {
+        "id": 26,
+        "category": "Time Series",
+        "question": "Transformasi data mana yang paling efektif untuk menangkap tren kepuasan pelanggan secara keseluruhan dari waktu ke waktu?",
+        "options": [
+            "Menghitung skor rata-rata kepuasan untuk setiap pelanggan.",
+            "Membuat rata-rata bergerak (moving average) dari skor kepuasan selama periode waktu tertentu.",
+            "Menerapkan Principal Component Analysis (PCA) pada fitur kepuasan.",
+            "Menormalisasi skor kepuasan ke distribusi z-score."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 27,
+        "category": "Tools & Libraries",
+        "question": "Pustaka Python apa yang harus mereka gunakan untuk mengumpulkan intelijen harga menggunakan teknik web scraping?",
+        "options": [
+            "Beautiful Soup",
+            "Seaborn",
+            "Matplotlib",
+            "NumPy"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 28,
+        "category": "Algorithms",
+        "question": "Manakah dari pernyataan berikut tentang k-means yang SALAH?",
+        "options": [
+            "k-means clustering adalah metode kuantisasi vektor.",
+            "k-means clustering bertujuan untuk mempartisi n pengamatan menjadi k klaster.",
+            "k-means tidak deterministik, dan memerlukan sejumlah iterasi.",
+            "k-means sama dengan k-nearest neighbor."
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 29,
+        "category": "Deep Learning",
+        "question": "Manakah dari berikut ini yang merupakan algoritma optimasi yang digunakan dalam deep learning, KECUALI?",
+        "options": [
+            "Adam",
+            "K-means",
+            "RMSprop",
+            "SGD"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 30,
+        "category": "Data Engineering",
+        "question": "Manakah dari metode berikut yang PALING tepat untuk memuat data pelanggan ke lingkungan analisis data Anda dari database cuaca?",
+        "options": [
+            "Menyalin dan menempel data secara manual dari file datar ke dalam kode Anda.",
+            "Menggunakan Beautiful Soup untuk mengekstrak data cuaca secara langsung dari situs web berita.",
+            "Menghubungkan ke database cuaca menggunakan pustaka mesin database seperti pandas.read_sql() atau SQLAlchemy.",
+            "Memuat file CSV Anda menggunakan pandas.read_csv()."
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 31,
+        "category": "Deep Learning",
+        "question": "Apa perbedaan utama antara Batch Gradient Descent dan Stochastic Gradient Descent (SGD)?",
+        "options": [
+            "Batch lebih cepat daripada SGD.",
+            "Batch menghitung gradien menggunakan seluruh set pelatihan, sedangkan SGD menggunakan satu contoh.",
+            "SGD tidak menggunakan gradient.",
+            "Batch hanya digunakan untuk regresi."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 32,
+        "category": "Ethics",
+        "question": "Untuk membangun kepercayaan dan transparansi yang lebih besar dengan klien, prinsip AI mana yang harus diutamakan?",
+        "options": [
+            "Akuntabilitas",
+            "Explainability (Keterjelaskan)",
+            "Keadilan",
+            "Interpretabilitas"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 33,
+        "category": "Data Engineering",
+        "question": "Dalam konsep 'Tidy Data', bagaimana struktur data yang benar?",
+        "options": [
+            "Setiap kolom adalah variabel, setiap baris adalah observasi.",
+            "Setiap baris adalah variabel.",
+            "Hanya memiliki satu kolom.",
+            "Data tersebar di banyak tabel tanpa kunci."
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 34,
+        "category": "Data Science Scenarios",
+        "question": "Anda ingin memahami alasan utama churn pelanggan (Ya/Tidak). Masalah ini termasuk jenis apa?",
+        "options": [
+            "Natural Language Processing (NLP)",
+            "Klasifikasi",
+            "Time Series Forecasting",
+            "Deteksi Anomali"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 35,
+        "category": "Model Evaluation",
+        "question": "Metrik mana yang paling umum digunakan untuk mengevaluasi model regresi?",
+        "options": [
+            "Akurasi",
+            "F1-Score",
+            "R-Squared",
+            "Root Mean Squared Error (RMSE)"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 36,
+        "category": "Time Series",
+        "question": "Apa praktik terbaik untuk menangani nilai yang hilang dalam kolom deret waktu (time series)?",
+        "options": [
+            "Abaikan nilai yang hilang.",
+            "Terapkan metode imputasi yang sesuai berdasarkan sifat data.",
+            "Hapus catatan.",
+            "Gunakan nilai yang paling sering."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 37,
+        "category": "Model Evaluation",
+        "question": "Dalam deteksi spam, untuk menghindari kehilangan email penting (meminimalkan False Positives pada Email Sah), metrik mana yang harus dioptimalkan?",
+        "options": [
+            "Akurasi",
+            "Skor F1",
+            "Presisi (Precision)",
+            "Recall"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 38,
+        "category": "Statistics",
+        "question": "Strategi mana yang dapat digunakan untuk meningkatkan kekuatan model statistik (statistical power)?",
+        "options": [
+            "Kurangi ukuran sampel",
+            "Kurangi ukuran populasi",
+            "Tingkatkan ukuran sampel",
+            "Tingkatkan ukuran populasi"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": 39,
+        "category": "Feature Engineering",
+        "question": "Mengapa penggunaan PCA langsung pada hasil TF-IDF sering tidak disarankan?",
+        "options": [
+            "TF-IDF menghasilkan dataset kategorikal.",
+            "TF-IDF menghasilkan matriks jarang (sparse), dan PCA standar menghancurkan sparsity tersebut (memboroskan memori).",
+            "TF-IDF menghasilkan dataset dimensi besar.",
+            "TF-IDF menghasilkan fitur numerik."
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 40,
+        "category": "Data Engineering",
+        "question": "Dalam uji A/B, item mana yang paling andal digunakan untuk mengaitkan pesanan dengan grup user?",
+        "options": [
+            "ID Cookie",
+            "ID Pelanggan (Customer ID)",
+            "ID Perangkat",
+            "Alamat IP"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": 41,
+        "category": "Data Privacy",
+        "question": "Dataset jenis apa yang dapat digunakan untuk mengatasi kurangnya data pelatihan sekaligus melindungi privasi?",
+        "options": [
+            "Data tiruan (Mock data)",
+            "Data acak",
+            "Data anonim",
+            "Data sintetis yang dihasilkan AI"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": 42,
+        "category": "Dimensionality Reduction",
+        "question": "Manakah dari metode berikut yang BUKAN merupakan teknik reduksi dimensi untuk dataset tabular?",
+        "options": [
+            "CBOW (Continuous Bag of Words)",
+            "PCA",
+            "t-SNE",
+            "UMAP"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 43,
+        "category": "Deep Learning",
+        "question": "Fungsi aktivasi Sigmoid paling sering digunakan sebagai output layer untuk masalah...",
+        "options": [
+            "Klasifikasi biner",
+            "Klasifikasi multi-kelas",
+            "Klasifikasi multi-label",
+            "Regresi Ridge"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 44,
+        "category": "Deep Learning",
+        "question": "Fungsi loss mana yang paling umum digunakan untuk model klasifikasi probabilitas?",
+        "options": [
+            "Cross-entropy / Log Loss",
+            "Hinge Loss",
+            "Mean Absolute Error",
+            "Mean Square Error"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 45,
+        "category": "Machine Learning Basics",
+        "question": "Mengapa penting untuk membagi dataset menjadi set pelatihan (train) dan pengujian (test)?",
+        "options": [
+            "Untuk memastikan model dilatih lebih cepat.",
+            "Untuk mengevaluasi kinerja model pada data yang tidak terlihat (unseen data).",
+            "Untuk menambah ukuran dataset.",
+            "Untuk mengurangi kebutuhan validasi silang."
+        ],
+        "correctAnswer": 1
     }
 ];

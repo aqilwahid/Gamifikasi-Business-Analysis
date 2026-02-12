@@ -11,13 +11,14 @@ let gameState = {
     status: 'SETUP',
     rounds: 0,
     snakes: { 16: 6, 47: 26, 49: 11, 56: 53, 62: 19, 64: 60, 87: 24, 93: 73, 95: 75, 98: 78 },
-    ladders: { 1: 38, 4: 14, 9: 31, 21: 42, 28: 84, 36: 44, 51: 67, 71: 91, 80: 100 },
+    ladders: { 4: 14, 9: 31, 21: 42, 28: 84, 36: 44, 51: 67, 71: 91, 80: 100 },
     currentQuestion: null,
     roundType: 'A',
     isBonus: false,
     activePlayerForBonus: null,
     penaltyPos: 0,
-    onBonusComplete: null
+    onBonusComplete: null,
+    diceRollCount: 0
 };
 
 // DOM Elements
@@ -51,7 +52,7 @@ const qCategory = document.getElementById('q-category');
 const qType = document.getElementById('q-type');
 const revealBtn = document.getElementById('reveal-answer-btn');
 const answerPhase = document.getElementById('answer-phase');
-const correctAnsDisplay = document.getElementById('correct-ans-text');
+
 const playerCheckboxes = document.getElementById('player-checkboxes');
 const confirmWinnersBtn = document.getElementById('confirm-winners-btn');
 const roundTypeDisplay = document.getElementById('round-type-display');
@@ -287,8 +288,25 @@ function nextRound() {
     showQuestion();
 }
 
+// Global shuffle bag outside gameState to persist across soft resets if needed, 
+// or keep in gameState if we want it to reset per game. Let's keep in gameState for simplicity.
+// But we need to init it. Adding logic to check if empty.
+
 function showQuestion() {
-    const q = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
+    // Initialize or refill the question bag if empty
+    if (!gameState.featureQuestionBag || gameState.featureQuestionBag.length === 0) {
+        // Create a list of indices [0, 1, 2, ... N-1]
+        gameState.featureQuestionBag = Array.from({ length: QUESTIONS.length }, (_, i) => i);
+    }
+
+    // Pick a random index from the bag
+    const randomIndex = Math.floor(Math.random() * gameState.featureQuestionBag.length);
+    const questionIndex = gameState.featureQuestionBag[randomIndex];
+
+    // Remove the selected index from the bag so it's not picked again immediately
+    gameState.featureQuestionBag.splice(randomIndex, 1);
+
+    const q = QUESTIONS[questionIndex];
     gameState.currentQuestion = q;
     gameState.isBonus = false;
 
@@ -318,7 +336,7 @@ revealBtn.onclick = () => {
 
     answerPhase.classList.remove('hidden');
     revealBtn.classList.add('hidden');
-    correctAnsDisplay.innerText = gameState.currentQuestion.options[correctIdx];
+
     generatePlayerCheckboxes();
 };
 
@@ -394,42 +412,47 @@ rollBtn.onclick = () => {
     const result = Math.floor(Math.random() * 12) + 1;
 
     // Determines which VISUAL face (1-6) will point forward
-    // e.g. result 7 -> (6) -> 1 -> Face 1
     const visualFace = (result - 1) % 6 + 1;
 
     const faceMap = {
         1: '.front', 2: '.bottom', 3: '.right', 4: '.left', 5: '.top', 6: '.back'
     };
 
-    // Clear all faces to 1-6 first to clean up previous large numbers
+    // Update Text on Faces
+    // 1. Reset all to standard 1-6
     for (let i = 1; i <= 6; i++) {
-        const el = document.querySelector(faceMap[i]);
+        const el = diceEl.querySelector(faceMap[i]);
         if (el) el.innerText = i;
     }
 
-    // Inject Target Result into Target Face
-    // We do this immediately or after small delay? 
-    // Immediate is safer to ensure it's there when resizing/spinning
-    const targetFaceEl = document.querySelector(faceMap[visualFace]);
-    targetFaceEl.innerText = result;
+    // 2. Set Target Face to Actual Result
+    const targetFaceEl = diceEl.querySelector(faceMap[visualFace]);
+    if (targetFaceEl) {
+        targetFaceEl.innerText = result;
+        // Force reflow to ensure text update is processed before spin
+        void targetFaceEl.offsetWidth;
+    }
+
+    log(`Rolling... (Target: ${result}, Face: ${visualFace})`);
 
     // Spin Animation
     const rotations = {
-        1: [0, 0], 2: [-90, 0], 3: [0, -90],
-        4: [0, 90], 5: [90, 0], 6: [180, 0]
+        1: [0, 0], 2: [90, 0], 3: [0, -90],
+        4: [0, 90], 5: [-90, 0], 6: [180, 0]
     };
     const [rx, ry] = rotations[visualFace];
-    const spins = 1080;
+
+    gameState.diceRollCount++;
+    // Add extra full spins (360 * 3 = 1080)
+    // We alternate rotation direction to make it look dynamic? No, stick to consistent add.
+    const spins = 1080 * gameState.diceRollCount;
 
     diceEl.style.transform = `rotateX(${rx + spins}deg) rotateY(${ry + spins}deg)`;
 
     setTimeout(() => {
         const p = gameState.players.find(x => x.id === gameState.currentRollerId);
 
-        let target = p.position + result;
-        if (target > 100) target = 100;
-
-        log(`${p.name} rolled ${result}. ${p.position} -> ${target}`);
+        log(`${p.name} moves ${result} steps.`);
 
         movePlayerStepByStep(p, result).then(() => {
             checkTileEvents(p).then(() => {
@@ -440,14 +463,27 @@ rollBtn.onclick = () => {
 };
 
 async function movePlayerStepByStep(player, steps) {
-    let target = player.position + steps;
+    const startPos = player.position;
+    let target = startPos + steps;
     if (target > 100) target = 100;
 
-    player.position = target;
     const token = document.getElementById(`token-${player.id}`);
-    updateTokenPosition(token, player.position);
-    renderPlayersList();
-    return new Promise(r => setTimeout(r, 500));
+
+    // Temporarily speed up transition for walking steps (faster than the default jump)
+    token.style.transition = 'all 0.3s ease-out';
+
+    // Walk step by step
+    for (let nextPos = startPos + 1; nextPos <= target; nextPos++) {
+        player.position = nextPos;
+        updateTokenPosition(token, nextPos);
+        renderPlayersList(); // Update sidebar info
+        // Wait slightly longer than the transition duration
+        await new Promise(r => setTimeout(r, 350));
+    }
+
+    // Restore original transition/style for Snakes/Ladders (long jumps)
+    token.style.transition = '';
+    return Promise.resolve();
 }
 
 async function checkTileEvents(player) {
